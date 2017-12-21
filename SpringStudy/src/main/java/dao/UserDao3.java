@@ -8,11 +8,11 @@ import java.sql.SQLException;
 
 import domain.User;
 
-public class UserDao2 {
+public class UserDao3 {
 	private ConnectionMaker connectionMaker;
 	
-	public UserDao2(){
-		connectionMaker = new ConnectionMakerImpl(false, null);
+	public UserDao3(ConnectionMaker connectionMaker){
+		this.connectionMaker = connectionMaker; 
 	}
 	
 	public void add(User user) throws ClassNotFoundException, SQLException{
