@@ -10,7 +10,7 @@ public class SpringDaoFactory {
 	// 오브젝트 생성을 담당하는 IoC용 메소드라는 표시
 	@Bean
 	public UserDao3 userDao(){
-		return new UserDao3(connectionMaker());
+		return new UserDao3();
 	}
 	
 	@Bean

@@ -10,8 +10,11 @@ create table users(
 /*
  *
  * 테스트 할 때 사용하는 데이터 삭제문 
+use spring_study;
 delete from users where name = '박종훈';
 commit;
+
+SELECT * FROM spring_study.users;
  * 
  * 
  */

@@ -6,13 +6,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import domain.User;
 
 public class UserDao3 {
 	private ConnectionMaker connectionMaker;
 	
+	public UserDao3(){
+		
+	}
+	
 	public UserDao3(ConnectionMaker connectionMaker){
-		this.connectionMaker = connectionMaker; 
+		this.connectionMaker = connectionMaker;
 	}
 	
 	public void add(User user) throws ClassNotFoundException, SQLException{
@@ -47,4 +53,9 @@ public class UserDao3 {
 		return user;
 	}
 
+	public void setConnectionMaker(ConnectionMaker connectionMaker) {
+		this.connectionMaker = connectionMaker;
+	}
+	
+	
 }

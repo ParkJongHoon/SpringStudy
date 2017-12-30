@@ -12,6 +12,9 @@ public class ConnectionMakerImpl implements ConnectionMaker {
 	private boolean isProperties;
 	private String propertiesPath;
 	
+	public ConnectionMakerImpl() {
+	}
+	
 	public ConnectionMakerImpl(boolean isProperties, String propertiesPath) {
 		this.isProperties = isProperties;
 		this.propertiesPath = propertiesPath;
@@ -47,4 +50,12 @@ public class ConnectionMakerImpl implements ConnectionMaker {
 		return c;
 	}
 
+	public void setProperties(boolean isProperties) {
+		this.isProperties = isProperties;
+	}
+
+	public void setPropertiesPath(String propertiesPath) {
+		this.propertiesPath = propertiesPath;
+	}
+	
 }

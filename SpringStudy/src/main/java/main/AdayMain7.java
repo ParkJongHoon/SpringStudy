@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import dao.ConnectionMaker;
 import dao.ConnectionMakerImpl;
 import dao.DaoFactory;
 import dao.SpringDaoFactory;
@@ -27,8 +28,11 @@ public class AdayMain7 {
 		 */
 		
 		// spring 애플리케이션 컨텍스트를 이용해서 UserDao3 객체를 생성 및 관계생성을 함
+		// @Configuration이 붙은 자바코드를 설정정보로 사용하려면
+		// AnnotationConfigApplication를 이용하면 된다.
 		ApplicationContext context = new AnnotationConfigApplicationContext(SpringDaoFactory.class);
 		UserDao3 dao = context.getBean("userDao", UserDao3.class);
+		dao.setConnectionMaker(context.getBean("connectionMaker", ConnectionMaker.class));
 		User user = new User();
 		user.setId("whiteship");
 		user.setName("박종훈");
