@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+     <bean id="realConnectionMaker" class="dao.ConnectionMakerImpl">
+        <constructor-arg value ="true"/>
+        <constructor-arg value ="E:\\ProjectStpring\\DBInfo\\db.properties"/>
+    </bean>
+    
+    <bean id="connectionMaker" class="dao.CountingConnectionMaker">
+        <property name="basename" ref="realConnectionMaker" />
+    </bean>
+
+    <bean id="userDao" class="dao.UserDao3">
+        <property name="basename" ref="connectionMaker" />
+    </bean>
+
+</beans>
