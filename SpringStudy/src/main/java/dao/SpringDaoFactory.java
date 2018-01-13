@@ -3,6 +3,8 @@ package dao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import properties.DBInfoGetProperties;
+
 // 애플리케이션 컨텍스트 또는 빈 팩토리가 사용할 설정정보라는 표시
 @Configuration
 public class SpringDaoFactory {
@@ -22,5 +24,6 @@ public class SpringDaoFactory {
 	public ConnectionMaker realConnectionMaker(){
 		return new ConnectionMakerImpl(true, "E:\\ProjectStpring\\DBInfo\\db.properties");
 	}
+	
 
 }

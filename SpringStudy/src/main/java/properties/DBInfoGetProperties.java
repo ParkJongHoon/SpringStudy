@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class DBInfoGetProperties {
+	public static String propertiesPath = "E:\\ProjectStpring\\DBInfo\\db.properties";
 	private Properties properties;
 	
 	public DBInfoGetProperties() {
@@ -22,8 +23,11 @@ public class DBInfoGetProperties {
         properties.load(inputStream);
         inputStream.close();
     }
+	public Properties defaultLoadPropFor() throws IOException {
+		return loadPropForStatic(propertiesPath);
+	}
 	
-	 public static Properties loadPropForStatic(String path) throws IOException {
+	public Properties loadPropForStatic(String path) throws IOException {
         Properties properties = new Properties();
         FileInputStream fis = new FileInputStream(path);
         properties.load(new BufferedInputStream(fis));
