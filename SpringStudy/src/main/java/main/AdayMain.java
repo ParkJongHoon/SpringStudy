@@ -8,6 +8,7 @@ import domain.User;
 public class AdayMain {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		/*
 		UserDao dao = new UserDao();
 		
 		User user = new User();
@@ -25,6 +26,7 @@ public class AdayMain {
 		System.out.println(user2.getPassword());
 		
 		System.out.println(user2.getId() + " 조회 성공");
+		*/
 
 	}
 
