@@ -5,8 +5,9 @@ create table users(
 	id varchar(10) primary key,
 	name varchar(20) not null,
 	password varchar(10) not null,
-	level TINYINT(1) not null
-	
+	level TINYINT(1) not null,
+    login int(10) not null,
+    recommend int(10) not null
 )
 
 /*
