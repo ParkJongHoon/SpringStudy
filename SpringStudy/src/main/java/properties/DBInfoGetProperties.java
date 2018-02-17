@@ -7,8 +7,8 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class DBInfoGetProperties {
-	public static String propertiesPath = "D:\\ProjectSpring\\DBInfo\\db.properties";
-	// public static String propertiesPath = "E:\\ProjectStpring\\DBInfo\\db.properties";
+	//public static String propertiesPath = "D:\\ProjectSpring\\DBInfo\\db.properties";
+	public static String propertiesPath = "E:\\ProjectStpring\\DBInfo\\db.properties";
 	private Properties properties;
 	
 	public DBInfoGetProperties() {

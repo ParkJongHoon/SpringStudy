@@ -20,6 +20,8 @@
         <property name="connectionMaker" ref="connectionMaker" />
     </bean>
 	-->
+	
+	  
 	<bean id="dbGetProperties" class="properties.DBInfoGetProperties"/>
 	
 	<bean id="driver" class="com.mysql.jdbc.Driver"/>
@@ -34,6 +36,10 @@
 		</constructor-arg>
 	</bean>
 	
+	
+	<!--
+	
+	2018/03/01
 	<bean id="countingDataSource" class="dao.CountingDataSource">
 		<constructor-arg>
 		   <ref bean="dataSource"/>
@@ -47,8 +53,15 @@
     </bean>
 	
 	
+	<bean id="jdbcContext" class="dao.JdbcContext">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 	
 
-	
+	-->
+
+	<bean id="userDao" class="dao.UserDao8">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 	
 </beans>
