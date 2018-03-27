@@ -30,7 +30,9 @@ public class UserDaoTest2 {
 	@Autowired
 	private ApplicationContext context;
 	
+	@Autowired
 	UserDao dao;
+	
 	String setId;
 	User user1;
 	User user2;
@@ -43,7 +45,7 @@ public class UserDaoTest2 {
 		// 2018-01-10 ConnectionMaker를 확장해서 connection을 할 때 마다 카운터 되는 기능 확장
 		// ConnectionMaker type을 주입받아서 기능 동작함
 		//CountingConnectionMaker cds = context.getBean("countingDataSource", CountingDataSource.class);
-		this.dao = this.context.getBean("userDao", UserDao9.class);
+		//this.dao = this.context.getBean("userDao", UserDao9.class);
 		setId = "whiteship";
 		this.user1 = new User("m05214", "박종훈", "test", Level.BASIC, 1, 0);
 		this.user2 = new User("hyejoony", "전혜준", "test", Level.SILVER, 55, 10);

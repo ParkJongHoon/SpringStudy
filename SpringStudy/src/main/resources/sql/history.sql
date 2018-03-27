@@ -1,6 +1,8 @@
 CREATE SCHEMA `spring_study` DEFAULT CHARACTER SET utf8 ;
 
 use spring_study;
+
+drop table users;
 create table users(
 	id varchar(10) primary key,
 	name varchar(20) not null,

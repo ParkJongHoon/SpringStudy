@@ -76,7 +76,7 @@ public class UserDao9 implements UserDao{
 	}
 	
 	public List<User> getAll(){
-		return this.jdbcTemplate.query("select * from user order by by id",
+		return this.jdbcTemplate.query("select * from users order by id",
 				this.userMapper);
 	}
 	
