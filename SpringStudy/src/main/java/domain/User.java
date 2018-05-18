@@ -1,5 +1,9 @@
 package domain;
 
+/**
+ * @author 사용자1
+ *
+ */
 public class User {
 	private static final int BASIC = 1;
 	private static final int SILVER = 2;
@@ -11,19 +15,32 @@ public class User {
 	Level level;
 	int login;
 	int recommend;
+	String email;
 	
 	public User() {
 	}
 	
-	public User(String id, String name, String password, Level level, int login,
-			int recommend) {
+	
+	public User(String id, String name, String password, Level level,
+			int login, int recommend ) {
+		new User(id, name, password, level, login, recommend, null);
+	}
+
+	
+
+	public User(String id, String name, String password, Level level,
+			int login, int recommend, String email) {
+		
 		this.id = id;
 		this.name = name;
 		this.password = password;
 		this.level = level;
 		this.login = login;
 		this.recommend = recommend;
+		this.email = email;
 	}
+
+
 	public String getId() {
 		return id;
 	}
@@ -67,6 +84,18 @@ public class User {
 		this.recommend = recommend;
 	}
 	
+	
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
 	public void upgradeLevel(){
 		Level nextLevel = this.level.nextLevel();
 		if(nextLevel == null){
