@@ -9,7 +9,8 @@ create table users(
 	password varchar(10) not null,
 	level TINYINT(1) not null,
     login int(10) not null,
-    recommend int(10) not null
+    recommend int(10) not null,
+    email varchar(20) not null
 )
 
 /*
