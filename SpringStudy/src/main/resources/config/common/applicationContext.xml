@@ -61,6 +61,24 @@
 	-->
 	<bean id="userService" class="service.UserService">
 		<property name="userDao" ref="userDao"/>
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="mailSender" ref="mailSender"/>
+	</bean>
+	
+	  <bean id="mailSender" class="service.DummyMailSender"/>
+	
+		<!-- <bean id="mailSender" class="service.CustomizingJavaMailSenderImpl">
+			<property name="customHost" value="211.49.99.14"/>
+			<property name="customPort" value="25"/>
+			<property name="customUserName" value="emailuser"/>
+			<property name="customPassword" value="emailuser"/>
+			<property name="starttlsEnable" value="true"/>
+			<property name="auth" value="true"/>
+		</bean>
+	
+	-->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 
 	<bean id="userDao" class="dao.UserDao9">

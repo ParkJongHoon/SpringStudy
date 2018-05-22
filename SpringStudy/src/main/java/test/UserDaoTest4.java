@@ -50,12 +50,10 @@ public class UserDaoTest4 {
 	public void upgradeLevels(){
 		Level[] levels = Level.values();
 		for(Level level : levels){
-			System.out.println("level: " + level);
 			if(level.nextLevel() == null ) continue;
 			
 			user.setLevel(level);
 			user.upgradeLevel();
-			System.out.println("user.getLevel(): " + user.getLevel());
 			assertThat(user.getLevel(), is(level.nextLevel()));
 		}
 	}
