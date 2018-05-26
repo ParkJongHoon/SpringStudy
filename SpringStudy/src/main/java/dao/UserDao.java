@@ -26,8 +26,5 @@ public interface UserDao {
 	public void add(final User user);
 	public void update(User user);
 	
-	
-	
-	
 
 }
