@@ -50,20 +50,29 @@ public class ReflectionTest {
 		 * Proxy 사용법 -  인자값 순서
 		 * 1) 클래스 로더
 		 * 2) 사용할 인터페이스
-		 * 3) 구현한 InvocationHandler
+		 * 3) 구현한 InvocationHandler(실행되는 메소드의 중간 과정에 관여할 수 있음)
 		 * 
 		 * 사용하는 이유
 		 * 1) 인터페이스의 각 메소드 별로 구현해야 하는 번거로움을 덜어줌
 		 * 2) 각 메소드안에서 적용된 기능의 중복
+		 * 
+		 * 목적
+		 * -> target 클래스의 메소드 실행전과 실행후 로직을 첨가할 수 있다.
 		 */
 		
 		Hello proxiedHello =(Hello)Proxy.newProxyInstance(getClass().getClassLoader(),
 				new Class[]{Hello.class},
 				new UppercaseHandler(new HelloTarget()));
 		//Hello proxiedHello = new HelloUppercase(new HelloTarget());
-		assertThat(proxiedHello.sayHello("Toby"), is("HELLO TOBY"));
+		
+		assertThat(proxiedHello.sayHello("Toby"), is("HELLO TOBY"));		
 		assertThat(proxiedHello.sayHi("Toby"), is("HI TOBY"));
 		assertThat(proxiedHello.sayThankYou("Toby"), is("THANK YOU TOBY"));
+	}
+	
+	@Test
+	public void upgradeAllOrNoting() throws Exception{
+		
 	}
 
 }

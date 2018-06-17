@@ -89,4 +89,8 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 	
+	<bean id="message" class="bean.factory.MessageFactoryBean">
+		<property name="text" value="Factory Bean"></property>
+	</bean>
+	
 </beans>
